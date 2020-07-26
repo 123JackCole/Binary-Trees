@@ -19,3 +19,20 @@ BinaryTree.prototype.add = function(data) {
 
 }
 
+BinaryTree.prototype.addNode = function(node, newNode) {
+
+    if (newNode.data < node.data) {
+        if (node.left === null) {
+            node.left = newNode;
+        } else {
+            this.addNode(node.left, newNode);
+        }
+    } else {
+        if (node.right === null) {
+            node.right = newNode;
+        } else {
+            this.addNode(node.right, newNode);
+        }
+    }
+
+}
