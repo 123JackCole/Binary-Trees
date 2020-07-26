@@ -36,3 +36,15 @@ BinaryTree.prototype.addNode = function(node, newNode) {
     }
 
 }
+
+BinarySearchTree = new BinaryTree();
+
+BinarySearchTree.add(7);
+BinarySearchTree.add(4);
+BinarySearchTree.add(2);
+BinarySearchTree.add(9);
+BinarySearchTree.add(3);
+BinarySearchTree.add(13);
+BinarySearchTree.add(17);
+
+console.log(BinarySearchTree)
