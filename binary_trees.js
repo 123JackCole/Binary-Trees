@@ -4,6 +4,11 @@ function Node(data) {
     this.right = null;
 }
 
+function TreeNode(data) {
+    this.data = data;
+    this.children = [];
+}
+
 function BinaryTree() {
     this.root = null;
 }
