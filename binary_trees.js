@@ -53,7 +53,7 @@ BinarySearchTree.add(17);
 
 console.log(BinarySearchTree);
 
-BinaryTree.prototype.BFS = function (value) {
+BinaryTree.prototype.BFS = function () {
   // array where we store the value of each node that we have visited
   let visited = [];
 
@@ -63,6 +63,9 @@ BinaryTree.prototype.BFS = function (value) {
   // queue to store all nodes we need to visit
   let queue = [current];
 
+  // this loop runs until our queue is empty
+  // we look at the next node in the queue, add it to the visited array
+  // finally, we add any children of the current node to the queue
   while (queue.length) {
     current = queue.shift();
     visited.push(current.data);
@@ -77,3 +80,5 @@ BinaryTree.prototype.BFS = function (value) {
 
   return visited;
 };
+
+BinarySearchTree.BFS();
