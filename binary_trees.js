@@ -88,9 +88,31 @@ BinarySearchTree.BFS();
 
 BinaryTree.prototype.DFSPreOrder = function () {
 
+  let visited = [];
 
+  let current = this.root;
 
-}
+  let stack = [current];
+
+  while(stack.length) {
+    current = stack.pop();
+    visited.push(current.data);
+
+    if (current.left) {
+      stack.push(current.left);
+    }
+    if (current.right) {
+      stack.push(current.right);
+    }
+
+  }
+
+  return visited;
+
+};
+
+BinarySearchTree.DFSPreOrder();
+console.log(BinarySearchTree.DFSPreOrder());
 
 BinaryTree.prototype.DFSPostOrder = function () {
 
