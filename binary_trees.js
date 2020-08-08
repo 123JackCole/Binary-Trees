@@ -54,6 +54,7 @@ BinarySearchTree.add(17);
 console.log(BinarySearchTree);
 
 BinaryTree.prototype.BFS = function () {
+
   // array where we store the value of each node that we have visited
   let visited = [];
 
@@ -76,9 +77,29 @@ BinaryTree.prototype.BFS = function () {
     if (current.right) {
       queue.push(current.right);
     }
+    
   }
 
   return visited;
+
 };
 
 BinarySearchTree.BFS();
+
+BinaryTree.prototype.DFSPreOrder = function () {
+
+
+
+}
+
+BinaryTree.prototype.DFSPostOrder = function () {
+
+
+
+}
+
+BinaryTree.prototype.DFSInOrder = function () {
+
+
+
+}
