@@ -52,7 +52,6 @@ BinarySearchTree.add(13);
 BinarySearchTree.add(17);
 
 BinaryTree.prototype.BFS = function () {
-
   // array where we store the value of each node that we have visited
   let visited = [];
 
@@ -75,74 +74,103 @@ BinaryTree.prototype.BFS = function () {
     if (current.right) {
       queue.push(current.right);
     }
-    
   }
 
   return visited;
-
 };
 
 BinarySearchTree.BFS();
 
-BinaryTree.prototype.DFSPreOrder = function () {
-
-  let visited = [];
-
-  let current = this.root;
-
-  let stack = [current];
-
-  while(stack.length) {
-    current = stack.pop();
-    visited.push(current.data);
-
-    if (current.right) {
-      stack.push(current.right);
-    }
-    if (current.left) {
-      stack.push(current.left);
-    }
-
-  }
-
-  return visited;
-
-};
-
+// Iterative solution using a stack
 // BinaryTree.prototype.DFSPreOrder = function () {
 
 //   let visited = [];
 
 //   let current = this.root;
 
-//   let traverse = (node) => {
-//     visited.push(node.data);
+//   let stack = [current];
 
-//     if (node.left) {
-//       traverse(node.left);
+//   while(stack.length) {
+//     current = stack.pop();
+//     visited.push(current.data);
+
+//     if (current.right) {
+//       stack.push(current.right);
 //     }
-//     if (node.right) {
-//       traverse(node.right);
+//     if (current.left) {
+//       stack.push(current.left);
 //     }
 
 //   }
 
-//   traverse(current);
 //   return visited;
 
 // };
 
-BinarySearchTree.DFSPreOrder();
-console.log(BinarySearchTree.DFSPreOrder());
+BinaryTree.prototype.DFSPreOrder = function () {
+  // array where we store the value of each node that we have visited
+  let visited = [];
+
+  // variable to keep track of current node
+  let current = this.root;
+
+  // method that adds node data to visited then runs itself on the node's children
+  let traverse = (node) => {
+    visited.push(node.data);
+
+    if (node.left) {
+      traverse(node.left);
+    }
+    if (node.right) {
+      traverse(node.right);
+    }
+  };
+
+  traverse(current);
+  return visited;
+};
 
 BinaryTree.prototype.DFSPostOrder = function () {
+  // array where we store the value of each node that we have visited
+  let visited = [];
 
+  // variable to keep track of current node
+  let current = this.root;
 
+  // method that adds node data to visited then runs itself on the node's children
+  let traverse = (node) => {
+    if (node.left) {
+      traverse(node.left);
+    }
+    if (node.right) {
+      traverse(node.right);
+    }
 
-}
+    visited.push(node.data);
+  };
+};
 
 BinaryTree.prototype.DFSInOrder = function () {
+  // array where we store the value of each node that we have visited
+  let visited = [];
 
+  // variable to keep track of current node
+  let current = this.root;
 
+  // method that adds node data to visited then runs itself on the node's children
+  let traverse = (node) => {
+    if (node.left) {
+      traverse(node.left);
+    }
 
-}
+    visited.push(node.data);
+
+    if (node.right) {
+      traverse(node.right);
+    }
+  };
+};
+
+BinarySearchTree.DFSPreOrder();
+BinarySearchTree.DFSPostOrder();
+BinarySearchTree.DFSInOrder();
