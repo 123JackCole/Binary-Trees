@@ -51,8 +51,6 @@ BinarySearchTree.add(3);
 BinarySearchTree.add(13);
 BinarySearchTree.add(17);
 
-console.log(BinarySearchTree);
-
 BinaryTree.prototype.BFS = function () {
 
   // array where we store the value of each node that we have visited
@@ -98,11 +96,11 @@ BinaryTree.prototype.DFSPreOrder = function () {
     current = stack.pop();
     visited.push(current.data);
 
-    if (current.left) {
-      stack.push(current.left);
-    }
     if (current.right) {
       stack.push(current.right);
+    }
+    if (current.left) {
+      stack.push(current.left);
     }
 
   }
@@ -110,6 +108,29 @@ BinaryTree.prototype.DFSPreOrder = function () {
   return visited;
 
 };
+
+// BinaryTree.prototype.DFSPreOrder = function () {
+
+//   let visited = [];
+
+//   let current = this.root;
+
+//   let traverse = (node) => {
+//     visited.push(node.data);
+
+//     if (node.left) {
+//       traverse(node.left);
+//     }
+//     if (node.right) {
+//       traverse(node.right);
+//     }
+
+//   }
+
+//   traverse(current);
+//   return visited;
+
+// };
 
 BinarySearchTree.DFSPreOrder();
 console.log(BinarySearchTree.DFSPreOrder());
