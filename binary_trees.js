@@ -82,6 +82,8 @@ BinaryTree.prototype.BFS = function () {
 BinarySearchTree.BFS();
 
 // Iterative solution using a stack
+// uncomment below to use
+
 // BinaryTree.prototype.DFSPreOrder = function () {
 
 //   let visited = [];
