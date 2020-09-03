@@ -109,6 +109,7 @@ BinarySearchTree.BFS();
 
 // };
 
+// DFS is good to know for coding challenges!
 BinaryTree.prototype.DFSPreOrder = function () {
   // array where we store the value of each node that we have visited
   let visited = [];
