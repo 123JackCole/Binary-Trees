@@ -51,6 +51,7 @@ BinarySearchTree.add(3);
 BinarySearchTree.add(13);
 BinarySearchTree.add(17);
 
+// BFS and DFS are great to know for coding interviews!
 BinaryTree.prototype.BFS = function () {
   // array where we store the value of each node that we have visited
   let visited = [];
